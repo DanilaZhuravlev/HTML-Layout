@@ -1,0 +1,313 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <title> Пример вёрстки </title>
+  <style>
+      * {
+        font-family: 'Roboto', sans-serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+        background-color: #f6f7f9;
+      }
+      header {
+        height: 100px;
+        padding: 0 40px;
+      }
+      header > div{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .header-menu > a{
+        margin-right: 20px;
+      }
+      .fixed-container {
+        max-width: 1000px;
+        height: 100%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .fixed-container h1{
+        margin-bottom: 1px;
+      }
+      .blue-block h2{
+        width: 50%;
+        font-size: 36px;
+      }
+      .blue-block p{
+        width: 50%;
+        font-size: 10px;
+      }
+      a{
+        color: black;
+        text-decoration: none;
+      }
+      a:hover{
+        text-decoration: underline;
+      }
+      section {
+        padding: 40px;
+      }
+      .first-block > div{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        background-image: url("img/pngwing.com (1).png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: right center;
+      }
+      .first-block {
+        height: 310px;
+      }
+
+      h1{
+        font-size: 50px;
+      }
+      h2{
+        font-size: 32px;
+      }
+      .services {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+      }
+      .services > div{
+        width: 200px;
+      }
+      .services img{
+        height: 120px;
+      }
+      .portfolio{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+      }
+      .portfolio > div{
+        width: 200px;
+      }
+      .portfolio > img{
+        height: 120px;
+      }
+      .price-info{
+        background-color: #3d52fe;
+        color: white;
+      }
+      .light-button{
+        border: 1px solid black;
+        background-color: transparent;
+        border-radius: 5px;
+      }
+      .dark-button{
+        background-color: #3d52fe;
+        border: #3d52fe;
+        border-radius: 5px;
+        color: white;
+      }
+      button{
+        padding: 10px 30px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      footer {
+        padding: 40px;
+      }
+      footer {
+  padding: 40px;
+}
+
+  .footer-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-menu a {
+    margin-right: 20px;
+  }
+
+  .footer-menu .left-menu {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-menu .contacts {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-menu .button-container {
+    text-align: right;
+  }
+  .social{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+  .social img{
+    height: 20px;
+    margin-top: 30px;
+  }
+      .popup-container{
+        background-color: #000000b3;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        display: none;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .popup{
+        background-color: white;
+        width: 300px;
+        height: 300px;
+        padding: 30px;
+        border-radius: 5px;
+      }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+        var container =
+    document.querySelector('.popup-container');
+        var popupButtons =
+    document.querySelectorAll('.open-popup');
+        for (let i = 0; i < popupButtons.length; i++) {
+            popupButtons[i].addEventListener('click', function(){
+                container.style.display = 'flex';
+        });
+    }
+    container.addEventListener('click', function(event){
+        if(event.target === container) {
+            container.style.display = 'none';
+            }
+        });
+    });
+  </script>
+</head>
+
+<body>
+  <div class="popup-container">
+    <form class="popup">
+      <label>
+        <input type="text" placeholder="Введите ваше имя" required>
+      </label>
+      <label>
+        <input type="email" placeholder="Введите ваш email" required>
+      </label>
+      <button type="submit" class="dark-button">Отправить</button>
+    </form>
+  </div>
+  <header>
+    <div class="fixed-container">
+      <div class="header-menu">
+        <a href="#">Услуги</a>
+        <a href="#">Портфолио</a>
+        <a href="#">Стоимость</a>
+      </div>
+      <div>
+        <span>+7123456789</span>
+        <button class="light-button open-popup">Заказать звонок</button>
+      </div>
+    </div>
+  </header>
+  <section class="first-block">
+    <div class="fixed-container">
+      <h1>Журавлев Данила</h1>
+      <p>Backend разработчик</p>
+      <button class="dark-button open-popup">Узнать больше</button>
+    </div>
+
+  </section>
+  <section>
+    <div class="fixed-container">
+      <h2>Что я делаю</h2>
+      <div class="services">
+        <div>
+          <img
+            src="img/pngwing.com%20(2).png" alt=""/>
+          Создание и поддержка API</div>
+        <div>
+          <img
+          src="img/pngwing.com%20(3).png"
+          alt=""/>
+          Исправление и доработка существующего кода</div>
+        <div>
+          <img src="img/pngwing.com%20(5).png" alt=""/>
+          Backend-разработка и программирование
+        </div>
+        <div>
+          <img src="img/pngwing.com%20(4).png" alt=""/>
+          Работа с серверной логикой</div>
+      </div>
+      <button class="light-button open-popup">Узнать стоимость</button>
+    </div>
+  </section>
+  <section>
+    <div class="fixed-container">
+      <h2>Примеры работ</h2>
+      <div class="portfolio">
+        <div>
+          <img src="img/pngwing.com%20(8).png" alt="">
+          Сайт психолога
+        </div>
+        <div>
+          <img src="img/pngwing.com%20(6).png" alt="">
+          Сайт онлайн магазина продуктов
+        </div>
+        <div>
+          <img src="img/pngwing.com%20(7).png" alt="">
+          Сайт онлайн магазина одежды
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="price-info">
+    <div class="fixed-container blue-block">
+      <h2>Создание API для регистрации пользователей и авторизации через токены*</h2>
+      <p>*Срок и стоимость могут отличаться от заявленных и рассчитываются индивидуально, в зависимости от сложности задач.
+      </p>
+    </div>
+  </section>
+  <footer>
+  <div class="fixed-container footer-menu">
+    <div class="left-menu">
+      <a href="#">Услуги</a>
+      <a href="#">Портфолио</a>
+      <a href="#">Стоимость</a>
+    </div>
+    <div class="contacts">
+      <span>danila@gmail.com</span>
+      <span>+7123456789</span>
+    </div>
+    <div class="button-container">
+      <button class="light-button open-popup">Заказать звонок</button>
+      <div class="social">
+        <div>
+          <img src="img/fb.png" alt="">
+        </div>
+        <div>
+          <img src="img/vk.png" alt="">
+        </div>
+        <div>
+          <img src="img/youtube.png" alt="">
+        </div>
+        <div>
+          <img src="img/tg.png" alt="">
+        </div>
+        <div>
+          <img src="img/inst.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
